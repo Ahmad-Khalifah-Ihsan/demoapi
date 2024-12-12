@@ -10,6 +10,6 @@ public class NewController {
     
     @GetMapping
     public String welcome(){
-        return"Welcome to Testing 01";
+        return"Welcome to Rest API";
     }
 }

@@ -8,7 +8,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "new_product")
@@ -20,11 +19,9 @@ public class Product implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @NotEmpty(message="Nama tidak boleh kosong")
     @Column(name ="product_name", length=100)
     private String name;
     
-    @NotEmpty(message="Deskripsi tidak boleh kosong")
     @Column(name ="product_description", length=500)
     private String description;
 
@@ -33,6 +30,7 @@ public class Product implements Serializable{
     public Product() {
     }
 
+    //Constructor
     public Product(Long id, String name, String description, double price) {
         this.id = id;
         this.name = name;
@@ -40,6 +38,7 @@ public class Product implements Serializable{
         this.price = price;
     }
 
+    //Getter & Setter
     public Long getId() {
         return id;
     }
